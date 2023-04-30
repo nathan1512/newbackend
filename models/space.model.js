@@ -4,15 +4,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const spaceSchema= new Schema({
-    userId:{
-        type: Schema.Types.ObjectId,
-        ref: UserModel.modelName
-    },
-    spacename: {
-        type: String,
-        required: true
-    },
-    addr:{
+
         country:{
            type: String,
            required:true
@@ -38,12 +30,7 @@ const spaceSchema= new Schema({
            required:true
        }
     },
-    capacity:{
-        type:Number,
-        required:true
-    }
-},
 {timestamps:true});
 
-const space = db.model('space',spaceSchema);
-module.exports = space;
+const spaceModel = db.model('space',spaceSchema);
+module.exports = spaceModel;
