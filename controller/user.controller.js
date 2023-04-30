@@ -43,7 +43,7 @@ exports.login = async (req, res, next) => {
         tokenData = { _id: user._id, email: user.email };
     
 
-        const token = await UserServices.generateAccessToken(tokenData,"secret","1h")
+        const token = await UserServices.generateAccessToken(tokenData,"secret","1h");
 
         res.status(200).json({ status: true, success: "sendData", token: token });
     } catch (error) {

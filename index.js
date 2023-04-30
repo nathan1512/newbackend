@@ -1,11 +1,11 @@
 const app = require("./app");
-// const UserModel = require('./models/user.model')
-const db = require('./config/db')
+const UserModel = require('./models/user.model');
+const db = require('./config/db');
 
 const port = 3000;
 
 app.get('/',(req,res)=>{
-    res.send("Hello World")
+    res.send("Hello World");
 })
 
 

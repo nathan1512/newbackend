@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const spaceController = require('../controller/space.controller')
+const spaceController = require('../controller/space.controller');
 
 router.post("/createSpace",spaceController.createSpace);
 
-router.get('/getUserSpaceList',spaceController.getUserSpaceList)
+router.get('/getUserSpaceList',spaceController.getUserSpaceList);
 
-router.post("/deleteSpace",spaceController.deleteSpace)
+router.post("/deleteSpace",spaceController.deleteSpace);
 
 
 

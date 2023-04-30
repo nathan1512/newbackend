@@ -9,12 +9,12 @@ class ToDoService{
     }
 
     static async getUserToDoList(userId){
-        const todoList = await ToDoModel.find({userId})
+        const todoList = await ToDoModel.find({userId});
         return todoList;
    }
 
    static async deleteToDo(id){
-        const deleted = await ToDoModel.findByIdAndDelete({_id:id})
+        const deleted = await ToDoModel.findByIdAndDelete({_id:id});
         return deleted;
    }
 }

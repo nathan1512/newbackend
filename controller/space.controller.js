@@ -1,9 +1,9 @@
 const spaceService = require('../services/space.service');
 exports.createSpace =  async (req,res,next)=>{
     try {
-        const { userId,spacename,country,state,district,street,propertynumber,postalcode,capacity } = req.body;
-        let spaceData = await spaceService.addSpace(userId,spacename,country,state,district,street,propertynumber,postalcode,capacity);
-        res.json({status: true,success:spaceData});
+        const { country,state,district,street,propertynumber,postalcode } = req.body;
+        let spaceData = await spaceService.addSpace(country,state,district,street,propertynumber,postalcode);
+        res.json({status: true,success: spaceData});
     } catch (error) {
         console.log(error, 'err---->');
         next(error);

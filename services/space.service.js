@@ -3,11 +3,11 @@ const jwt = require("jsonwebtoken");
 
 class spaceServices{
  
-    static async addspace(userId,spacename,country,state,district,street,propertynumber,postalcode,capacity)
+    static async addSpace(country,state,district,street,propertynumber,postalcode)
     {   try{
-                console.log("----userId,spacename,country,state,district,street,propertynumber,postalcode,capacity-----",userId,spacename,country,state,district,street,propertynumber,postalcode,capacity);
+                console.log("det",country,state,district,street,propertynumber,postalcode);
                 
-                const createNewSpace = new UserModel({userId,spacename,addr:{country,state,district,street,propertynumber,postalcode},capacity});
+                const createNewSpace = new spaceModel({country,state,district,street,propertynumber,postalcode});
                 return await createNewSpace.save();
         }catch(err){
             throw err;
@@ -23,15 +23,15 @@ class spaceServices{
     }
 
     static async getUserSpaceList(userId){
-        const spaceList = await spaceModel.find({userId})
+        const spaceList = await spaceModel.find({userId});
         return spaceList;
    }
    static async deleteSpace(id){
-    const deleted = await spaceModel.findByIdAndDelete({_id:id})
+    const deleted = await spaceModel.findByIdAndDelete({_id:id});
     return deleted;
 }
 
    
 }
 
-module.exports = spaceServices
+module.exports = spaceServices;
