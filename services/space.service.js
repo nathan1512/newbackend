@@ -13,8 +13,23 @@ class spaceServices{
             throw err;
         }
     }
+    static async getSpacesById(_id){
+        try{
+            return await spaceModel.findOne({_id});
+        }catch(err){
+            console.log(err);
+        }
+    }
 
-    
+    static async getUserSpaceList(userId){
+        const spaceList = await spaceModel.find({userId})
+        return spaceList;
+   }
+   static async deleteSpace(id){
+    const deleted = await spaceModel.findByIdAndDelete({_id:id})
+    return deleted;
+}
+
    
 }
 
