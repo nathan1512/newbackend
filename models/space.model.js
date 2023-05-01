@@ -5,32 +5,32 @@ const { Schema } = mongoose;
 
 const spaceSchema= new Schema({
 
-        country:{
+country:{
            type: String,
            required:true
        },
-        state:{
+state:{
+           type: String,
+           required:true
+},
+district:{
            type: String,
            required:true
        },
-       district:{
+street:{
            type: String,
            required:true
        },
-       street:{
+propertynumber:{
            type: String,
            required:true
        },
-       propertynumber:{
-           type: String,
-           required:true
-       },
-       postalcode:{
+postalcode:{
            type: String,
            required:true
        }
     },
-{timestamps:true});
+);
 
 const spaceModel = db.model('space',spaceSchema);
 module.exports = spaceModel;
