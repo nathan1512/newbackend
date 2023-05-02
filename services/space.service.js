@@ -3,11 +3,11 @@ const jwt = require("jsonwebtoken");
 
 class spaceServices{
  
-    static async addspace(userEmail,country,state,district,street,propertynumber,postalcode)
+    static async addspace(userEmail,country,state,district,street,propertynumber,postalcode,spacename,capacity)
     {   try{
-                console.log("----userEmail,spacename,country,state,district,street,propertynumber,postalcode,capacity-----",userEmail,country,state,district,street,propertynumber,postalcode);
+                console.log("----userEmail,spacename,country,state,district,street,propertynumber,postalcode,capacity-----",userEmail,country,state,district,street,propertynumber,postalcode,spacename,capacity);
                 
-                const createNewSpace = new spaceModel({userEmail,country,state,district,street,propertynumber,postalcode});
+                const createNewSpace = new spaceModel({userEmail,country,state,district,street,propertynumber,postalcode,spacename,capacity});
                 return await createNewSpace.save();
         }catch(err){
             throw err;
