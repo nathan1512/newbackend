@@ -32,8 +32,17 @@ propertynumber:{
 postalcode:{
            type: String,
            required:true
-       }
+       },
+    
+spacename: {
+        type: String,
+        required:true
     },
+capacity: {
+        type: String,
+        required:true
+    },
+ },
 );
 
 const spaceModel = db.model('space',spaceSchema);
