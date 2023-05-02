@@ -1,13 +1,6 @@
 const router = require("express").Router();
-const spacecontroller = require('C:/Users/Public/newbackend/controller/space.controller');
+const spacecontroller = require("../controller/space.controller");
 router.post("/createspace",spacecontroller.createSpace);
 router.post("/deletespace",spacecontroller.deleteSpace);
-router.post("/getspace",spacecontroller.getSpacesById);
-
-
-
-
-
-
-
+router.post("/getspacelist",spacecontroller.getSpaceList);
 module.exports = router;

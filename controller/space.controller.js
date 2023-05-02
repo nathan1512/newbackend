@@ -1,4 +1,4 @@
-const spaceServices = require('../services/space.service');
+const spaceServices = require("../services/space.service");
 exports.createSpace =  async (req,res,next)=>{
     try {
         const { userId,country,state,district,street,propertynumber,postalcode } = req.body;
