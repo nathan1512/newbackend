@@ -7,9 +7,6 @@ const port = 3000;
 app.get('/',(req,res)=>{
     res.send("Hello World")
 })
-app.post('/addspace',(req,res,next)=>{
-    res.send("Hello World")
-})
 
 
 app.listen(port,()=>{
