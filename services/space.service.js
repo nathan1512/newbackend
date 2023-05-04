@@ -29,8 +29,10 @@ class spaceServices{
     const deleted = await spaceModel.findByIdAndDelete({_id:id})
     return deleted;
 }
-
+static async searchSpaces(input){
+    const searchResults = await spaceModel.find({spacename:input})
+    return searchResults;
    
-}
+}}
 
 module.exports = spaceServices;

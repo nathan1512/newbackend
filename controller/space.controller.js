@@ -29,4 +29,14 @@ exports.deleteSpace =  async (req,res,next)=>{
         next(error);
     }
 }
+exports.searchSpace =  async (req,res,next)=>{
+    try {
+        const { query } = req.body;
+        let searchResult = await spaceServices.searchSpaces(query);
+        res.json({status: true,success:searchResult});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }
+}
 

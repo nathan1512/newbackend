@@ -44,6 +44,8 @@ capacity: {
     },
  },
 );
+spaceSchema.index({ spacename: "text" });
+
 
 const spaceModel = db.model('space',spaceSchema);
 module.exports = spaceModel;
