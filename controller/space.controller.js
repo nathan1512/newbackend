@@ -12,7 +12,7 @@ exports.createSpace =  async (req,res,next)=>{
 exports.getSpaceList =  async (req,res,next)=>{
     try {
         const { userEmail } = req.body;
-        let spaceData = await spaceService.getUserSpaceList(userEmail);
+        let spaceData = await spaceServices.getUserSpaceList(userEmail);
         res.json({status: true,success:spaceData});
     } catch (error) {
         console.log(error, 'err---->');
