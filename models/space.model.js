@@ -39,7 +39,7 @@ spacename: {
         required:true
     },
 capacity: {
-        type: String,
+        type: Number,
         required:true
     },
  },
