@@ -19,10 +19,13 @@ const userSchema = new Schema({
     name: {
         type: String,
         required: [true, "name is required"],
+        match: [/^[a-zA-Z\s]+$/ ,'Please enter a valid Indian name'],
     },
     phone: {
         type: String,
         required: [true, "phone is required"],
+        match: [/^\d{10}$/ ,'Please enter a valid Indian Phone Number'],
+
     },
 },{timestamps:true});
 
