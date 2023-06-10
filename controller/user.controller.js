@@ -13,6 +13,8 @@ exports.register = async (req, res, next) => {
 
 
     } catch (err) {
+        res.json({ status: false, success: 'User registered successfully' });
+
         console.log("---> err -->", err);
         next(err);
     }
@@ -47,6 +49,7 @@ exports.login = async (req, res, next) => {
 
         res.status(200).json({ email: user.email,status: true, success: "sendData", token: token });
     } catch (error) {
+        res.json({ status: false, success: 'User registered successfully' });
         console.log(error, 'err---->');
         next(error);
     }
