@@ -28,6 +28,16 @@ exports.createSpace =  async (req,res,next)=>{
         next(error);
     }
 };
+exports.getSpaceById =  async (req,res,next)=>{
+    try {
+        const {id} = req.body;
+        let spaceData = await spaceServices.getSpaceById(id);
+        res.json({status: true,success:spaceData});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }
+}
 exports.getSpaceList =  async (req,res,next)=>{
     try {
         const { userEmail } = req.body;

@@ -13,9 +13,9 @@ class spaceServices{
             throw err;
         }
     }
-    static async getSpacesById(_id){
+    static async getSpaceById(id){
         try{
-            return await spaceModel.findOne({_id});
+            return await spaceModel.findOne({_id:id});
         }catch(err){
             console.log(err);
         }
