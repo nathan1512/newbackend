@@ -25,6 +25,10 @@ class spaceServices{
         const spaceList = await spaceModel.find({userEmail:useremail})
         return spaceList;
    }
+   static async getUserSpaceFull(useremail){
+    const spaceList = await spaceModel.find({userEmail:useremail})
+    return spaceList;
+}
    static async deleteSpace(id){
     const deleted = await spaceModel.findByIdAndDelete({_id:id})
     return deleted;

@@ -48,6 +48,16 @@ exports.getSpaceList =  async (req,res,next)=>{
         next(error);
     }
 }
+exports.getSpaces =  async (req,res,next)=>{
+    try {
+        const { userEmail } = req.body;
+        let spaceData = await spaceServices.getUserSpaceFull(userEmail);
+        res.json({status: true,success:spaceData});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }
+}
 exports.deleteSpace =  async (req,res,next)=>{
     try {
         const { id } = req.body;
