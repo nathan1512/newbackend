@@ -9,6 +9,7 @@ exports.createSpace =  async (req,res,next)=>{
             api_key: '615639781883824', 
             api_secret: 'JnPT3QBXjUif1h1-2txILus7TEs' 
           });
+          const { userEmail,country,state,district,street,propertynumber,postalcode,spacename,capacity} = req.body;
           const file = req.body.image;
           const imageBuffer = Buffer.from(file, 'base64');
           const tempFilePath = './assets/tempImage.jpg';
@@ -19,7 +20,7 @@ exports.createSpace =  async (req,res,next)=>{
             console.log(result);
             const imageurl=result.secure_url;
             fs.unlinkSync(tempFilePath);
-        const { userEmail,country,state,district,street,propertynumber,postalcode,spacename,capacity} = req.body;
+        
         let spaceData = await spaceServices.addspace(userEmail,country,state,district,street,propertynumber,postalcode,spacename,capacity,imageurl);
         res.json({status: true,success:spaceData});
     } catch (error) {
