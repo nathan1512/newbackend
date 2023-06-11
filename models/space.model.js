@@ -42,6 +42,9 @@ capacity: {
         type: Number,
         required:true
     },
+imageurl: {
+        type: String
+}
  },
 );
 spaceSchema.index({ spacename: "text" });
