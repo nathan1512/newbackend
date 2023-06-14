@@ -44,6 +44,14 @@ capacity: {
     },
 imageurl: {
         type: String
+},
+bookingDetails: {
+bookedBy: {
+    type: String,
+    unique:true
+},
+bookedOn:{type: Date},
+bookedForDate:{type: Date, unique:true}
 }
  },
 );

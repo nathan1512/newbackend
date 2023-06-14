@@ -77,5 +77,25 @@ exports.searchSpace =  async (req,res,next)=>{
         console.log(error, 'err---->');
         next(error);
     }
+    
 }
+exports.bookSpace =async (req,res,next)=>{
+    try {
+        const { spaceId,useremail,bookingdate } = req.body;
+        let booking = await spaceServices.bookSpace(spaceId,useremail,bookingdate);
+        res.json({status: true,success:booking});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }
+}
+exports.getBookedSpaces =async (req,res,next)=>{
+    try {
+        const { useremail } = req.body;
+        let bspaces = await spaceServices.getBookedSpaces(useremail);
+        res.json({status: true,success:bspaces});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }}
 

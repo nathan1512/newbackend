@@ -37,6 +37,15 @@ static async searchSpaces(input){
     const searchResults = await spaceModel.find({spacename:input})
     return searchResults;
    
-}}
+}
+static async bookSpace(spaceid,userEmail,bookingDate){
+    let date_ob = new Date();
+    const status= await spaceModel.findByIdAndUpdate(spaceid,{bookingDetails:{ bookedBy:userEmail, bookedFor:bookingDate, bookedOn:date_ob.getDate}})
+    return status;
+    }
+static async getBookedSpaces(useremail){
+    const spaceList = await spaceModel.find({bookedBy:useremail})
+    return spaceList;
+    }}
 
 module.exports = spaceServices;
