@@ -6,7 +6,7 @@ router.get("/getspacelist",spacecontroller.getSpaceList);
 router.get("/getspacebyid",spacecontroller.getSpaceById);
 router.get("/searchspace",spacecontroller.searchSpace);
 router.post("/bookSpace",spacecontroller.bookSpace);
-router.get("/getbookedspaces",spacecontroller.getBookedSpaces);
+router.get("/getbookedspacesbyuser",spacecontroller.getBookedSpaces);
 
 
 

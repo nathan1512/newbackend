@@ -19,7 +19,7 @@ const userSchema = new Schema({
     name: {
         type: String,
         required: [true, "name is required"],
-        match: [/^[a-zA-Z\s]+$/ ,'Please enter a valid Indian name'],
+        match: [/^[a-zA-Z\s]+$/ ,'Please enter a valid name'],
     },
     phone: {
         type: String,
