@@ -7,15 +7,13 @@ const Booking = require('./models/space.model')
 const removeExpiredBookings = async () => {
     try {
       const currentDate = new Date();
-      await Booking.deleteMany({ bookedForDate: { $lt: currentDate } });
+      await Booking.deleteMany({bookingDetails:{ bookedForDate: { $lt: currentDate }} });
       console.log('Expired bookings removed.');
     } catch (error) {
       console.error('Error removing expired bookings:', error);
     }
   };
-  
-  // Run the task every hour (adjust the interval as needed)
-  setInterval(removeExpiredBookings, 60 * 60 * 1000);
+setInterval(removeExpiredBookings, 60 * 60 * 1000);
 
 const app = express();
 
